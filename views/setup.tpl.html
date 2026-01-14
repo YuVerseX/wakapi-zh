@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 {{ template "head.tpl.html" . }}
 
@@ -16,9 +16,9 @@
 
 <main class="mt-10 grow flex justify-center w-full lg:w-3/4 self-center" id="setup-instructions-page">
     <div class="flex flex-col grow mt-10 max-available text-secondary">
-        <h1 class="h1 inline-block text-center">Setup Instructions</h1>
+<h1 class="h1 inline-block text-center">设置说明</h1>
         <h2 class="h2 inline-block text-center text-xl mt-2">
-            Get started tracking your coding time with Wakapi in just a few steps<br>– simple and easy!
+            只需几步即可开始使用 Wakapi 追踪您的编码时间<br>——简单又轻松！
             <span class="iconify inline ml-1" data-icon="fxemoji:rocket"></span>
         </h2>
 
@@ -28,9 +28,9 @@
                     <h3 class="flex justify-center items-center text-white text-xl font-semibold bg-accent rounded-full w-[50px] h-[50px]">1</h3>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold text-white">Install the WakaTime plugin</h4>
-                    <p class="mb-3">First step is to download and install the WakaTime plugin into your editor or IDE. Available for Visual Studio Code, PyCharm, IntelliJ, Neovim and many more – even Chrome or Firefox are supported.</p>
-                    <a href="https://wakatime.com/plugins" target="_blank" rel="noreferrer noopener" class="btn btn-primary">Download Plugin <span class="iconify inline ml-1" data-icon="ic:round-download"></span></a>
+<h4 class="text-lg font-semibold text-white">安装 WakaTime 插件</h4>
+                    <p class="mb-3">第一步是下载并安装 WakaTime 插件到您的编辑器或 IDE。支持 Visual Studio Code、PyCharm、IntelliJ、Neovim 等众多编辑器——甚至支持 Chrome 或 Firefox 浏览器。</p>
+                    <a href="https://wakatime.com/plugins" target="_blank" rel="noreferrer noopener" class="btn btn-primary">下载插件 <span class="iconify inline ml-1" data-icon="ic:round-download"></span></a>
                 </div>
             </div>
 
@@ -39,13 +39,13 @@
                     <h3 class="flex justify-center items-center text-white text-xl font-semibold bg-accent rounded-full w-[50px] h-[50px]">2</h3>
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <h4 class="text-lg font-semibold text-white">Update your config</h4>
-                    <p class="">After having installed one or more IDE plugins, you will have to adapt the WakaTime config file in your home directory.</p>
+<h4 class="text-lg font-semibold text-white">更新您的配置</h4>
+                    <p class="">安装一个或多个 IDE 插件后，您需要调整主目录中的 WakaTime 配置文件。</p>
                     <p class="my-1">
-                        <span class="font-semibold">On Linux / macOS: <span class="font-mono text-sm font-normal ml-1">~/.wakatime.cfg</span></span><br>
-                        <span class="font-semibold">On Windows: <span class="font-mono text-sm font-normal ml-1">%USERPROFILE%\.wakatime.cfg</span></span>
+                        <span class="font-semibold">在 Linux / macOS 上：<span class="font-mono text-sm font-normal ml-1">~/.wakatime.cfg</span></span><br>
+                        <span class="font-semibold">在 Windows 上：<span class="font-mono text-sm font-normal ml-1">%USERPROFILE%\.wakatime.cfg</span></span>
                     </p>
-                    <p>Open the file with your favorite editor and adapt the API URL and -key like this:</p>
+                    <p>用您喜欢的编辑器打开文件并按如下方式配置 API URL 和密钥：</p>
                     <div class="bg-card text-left rounded-md py-4 px-8 text-xs font-mono shadow-md">
                         [settings]<br>
                         {{ if .User }}
@@ -64,9 +64,9 @@
                     <h3 class="flex justify-center items-center text-white text-xl font-semibold bg-accent rounded-full w-[50px] h-[50px]">3</h3>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold text-white">Start coding!</h4>
-                    <p class="mb-3">You're done! Restart your editor or IDE and jump straight into coding. After a short while, you will see your coding activity appear on the dashboard, providing detailed project insights and statistics about your favorite editor, operating system, programming language and more.</p>
-                    <a href="summary" class="btn btn-primary">Go to Dashboard <span class="iconify inline ml-1" data-icon="ic:round-dashboard"></span></a>
+<h4 class="text-lg font-semibold text-white">开始编码！</h4>
+                    <p class="mb-3">完成了！重启您的编辑器或 IDE，开始编码。稍后，您将看到您的编码活动出现在仪表盘上，提供详细的项目洞察和关于您喜欢的编辑器、操作系统、编程语言等的统计数据。</p>
+                    <a href="summary" class="btn btn-primary">前往仪表盘 <span class="iconify inline ml-1" data-icon="ic:round-dashboard"></span></a>
                 </div>
             </div>
         </div>

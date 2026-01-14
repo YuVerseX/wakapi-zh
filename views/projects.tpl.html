@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 {{ template "head.tpl.html" . }}
 
@@ -11,10 +11,10 @@
 
 <main class="mt-10 grow flex justify-center w-full" id="projects-page">
     <div class="flex flex-col grow mt-10 max-available">
-        <h1 class="h1" style="margin-bottom: 0.5rem">Your Projects</h1>
+<h1 class="h1" style="margin-bottom: 0.5rem">您的项目</h1>
 
         <p class="block text-sm text-foreground mb-8">
-            This is an overview of all your projects, ordered by recent activity. Color intensity indicates the overall activity on that project, that is, project that had been worked on more have stronger colors. Click a project to view project-specific statistics. Please note that this view is cached and thus might not be perfectly up-to-date.
+            这是您所有项目的概览，按最近活动排序。颜色深浅表示该项目的整体活跃度，即编码时间越多的项目颜色越深。点击项目可查看项目详细统计数据。请注意，此视图已缓存，因此可能不是完全实时的。
         </p>
 
         {{ if len .Projects }}
@@ -22,7 +22,7 @@
             {{ range $i, $project := .Projects }}
             <li class="projects-item relative">
                 <div class="color-fading" style="{{ $.BackgroundIntensity $i | cssSafe }}"></div>
-                <a href="summary?interval=any&project={{ $project.Project }}" title="Project '{{ $project.Project }}' ({{ $project.Count }} heartbeats)">
+                <a href="summary?interval=any&project={{ $project.Project }}" title="项目 '{{ $project.Project }}' ({{ $project.Count }} 个心跳)">
                     <span class="text-lg font-semibold truncate">{{ $project.Project }}
                         {{ if $.LangIcon $project.TopLanguage }}
                         <span class="align-middle leading-none"><span class="iconify inline text-foreground text-lg ml-1" data-icon="{{ $.LangIcon $project.TopLanguage | urlSafe }}"></span></span>
@@ -36,12 +36,12 @@
             {{ end }}
         </ul>
         {{ else }}
-        <p class="text-sm text-foreground">No project data available, yet... Go start coding! 🤓</p>
+        <p class="text-sm text-foreground">暂无项目数据...去开始编码吧！🤓</p>
         {{ end }}
 
         <div class="mt-16 flex justify-center">
-            <a class="bg-focused hover:bg-card text-small text-foreground py-2 px-4 rounded-l-full mr-px text-center text-sm {{ if le .PageParams.Page 1 }}disabled{{ end }}" style="width: 90px" href="projects?page={{ add .PageParams.Page -1 }}">Previous</a>
-            <a class="bg-focused hover:bg-card text-small text-foreground py-2 px-4 rounded-r-full ml-px text-center text-sm {{ if lt (len .Projects) .PageParams.PageSize }}disabled{{ end }}" style="width: 90px" href="projects?page={{ add .PageParams.Page 1 }}">Next</a>
+<a class="bg-focused hover:bg-card text-small text-foreground py-2 px-4 rounded-l-full mr-px text-center text-sm {{ if le .PageParams.Page 1 }}disabled{{ end }}" style="width: 90px" href="projects?page={{ add .PageParams.Page -1 }}">上一页</a>
+            <a class="bg-focused hover:bg-card text-small text-foreground py-2 px-4 rounded-r-full ml-px text-center text-sm {{ if lt (len .Projects) .PageParams.PageSize }}disabled{{ end }}" style="width: 90px" href="projects?page={{ add .PageParams.Page 1 }}">下一页</a>
         </div>
     </div>
 </main>

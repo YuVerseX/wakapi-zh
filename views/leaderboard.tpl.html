@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 {{ template "head.tpl.html" . }}
 
@@ -21,23 +21,23 @@
 <main class="mt-10 grow flex justify-center w-full" id="leaderboard-page">
     <div class="flex flex-col grow mt-10 max-available">
         <div class="flex items-center justify-start" style="margin-bottom: 0.5rem">
-            <h1 class="h1 inline-block">Leaderboard</h1>
+            <h1 class="h1 inline-block">排行榜</h1>
             {{ if .IntervalLabel }}
             <span class="text-muted text-xl inline-block ml-1">&nbsp;({{ .IntervalLabel }})</span>
             {{ end }}
         </div>
 
-        <p class="block text-sm text-foreground w-full lg:w-3/4 mb-8">
-            Wakapi's leaderboard shows a ranking of the most active users on this server, given they opted in to get listed on the public leaderboard. Statistics are updated at least every 12 hours and are based on the users' total coding time in a pre-defined interval.
-            To participate, log in, go to <a class="link" href="settings#permissions">Settings 🠒 Permissions</a> and enable leaderboards.
+<p class="block text-sm text-foreground w-full lg:w-3/4 mb-8">
+            Wakapi 排行榜显示此服务器上最活跃用户的排名，前提是他们选择加入公开排行榜。统计数据至少每 12 小时更新一次，基于用户在预定义时间段内的总编码时长。
+            要参与排行榜，请登录后前往 <a class="link" href="settings#permissions">设置 🠒 权限</a> 并启用排行榜功能。
         </p>
 
         <ul class="flex space-x-4 mb-4 text-muted">
             <li class="font-semibold text-xl {{ if eq .By "" }} text-foreground {{ else }} hover:text-secondary {{ end }}">
-                <a href="leaderboard">Total</a>
+                <a href="leaderboard">总计</a>
             </li>
             <li class="font-semibold text-xl {{ if eq .By "language" }} text-foreground {{ else }} hover:text-secondary {{ end }}">
-                <a href="leaderboard?by=language">By Language</a>
+                <a href="leaderboard?by=language">按语言</a>
             </li>
         </ul>
 
@@ -64,14 +64,14 @@
                     <div class="w-12"><strong># {{ $item.Rank }}</strong></div>
                     <div class="flex flex-grow w-16 mx-1 justify-start items-center space-x-4 align-middle">
                         {{ if avatarUrlTemplate }}
-                        <img src="{{ $item.User.AvatarURL avatarUrlTemplate }}" width="24px" class="rounded-full border-accent" alt="User Profile Avatar"/>
+                        <img src="{{ $item.User.AvatarURL avatarUrlTemplate }}" width="24px" class="rounded-full border-accent" alt="用户头像"/>
                         {{ else }}
                         <span class="iconify inline cursor-pointer text-secondary rounded-full border-accent" style="width: 24px; height: 24px" data-icon="ic:round-person"></span>
                         {{ end }}
                         <div>
                             <strong class="text-ellipsis truncate">@{{ $item.UserID }}</strong>
                             {{ if $item.User.HasActiveSubscription }}
-                            <span class="iconify inline text-gold ml-1" data-icon="jam:crown-f" style="margin-bottom: -2px" title="{{ $item.UserID }} is a supporter of Wakapi!"></span>
+                            <span class="iconify inline text-gold ml-1" data-icon="jam:crown-f" style="margin-bottom: -2px" title="{{ $item.UserID }} 是 Wakapi 的支持者！"></span>
                             {{ end }}
                         </div>
                     </div>
@@ -87,11 +87,11 @@
                 </li>
                 {{ end }}
             </ol>
-            <p class="text-sm pt-8">Last Updated: {{ .LastUpdate | datetimetz }}</p>
+            <p class="text-sm pt-8">最后更新：{{ .LastUpdate | datetimetz }}</p>
             {{ else }}
-            <p>
+<p>
                 <span class="iconify inline text-white text-base" data-icon="twemoji:frowning-face"></span>&nbsp;
-                The leaderboard is currently empty ...
+                排行榜目前为空...
             </p>
             {{ end }}
 
